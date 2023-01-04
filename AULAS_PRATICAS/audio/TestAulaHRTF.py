@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import scipy.io.wavfile as wav
 
 angulo_S1 = 90
-path_sons = './Sons/'
+path_sons = './sons/'
 path_HRTF = './HRTF/elev0/'
 filenameSom = 'scissor-snips.wav'
 Fs, xSom = wav.read(path_sons + filenameSom)
