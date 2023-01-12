@@ -45,10 +45,13 @@ n = np.arange(0, 1*Fs)
 C = 3*np.log(10/RT60)
 
 beta = np.random.randn(len(n))
-xRIR = beta * np.exp(-C/Fs*n) # Room Impulse Response
+
+# Room Impulse Response
+xRIR = beta * np.exp(-C/Fs*n) 
 
 xRIR = xRIR/np.max(np.abs(xRIR)) # normaliza a 1
 xRIR = xRIR*2**(15-1) # normaliza a int16
+
 xRIR = np.asarray(xRIR, dtype=np.int32)
 
 yL_Rev = np.convolve(xRIR, yL)
